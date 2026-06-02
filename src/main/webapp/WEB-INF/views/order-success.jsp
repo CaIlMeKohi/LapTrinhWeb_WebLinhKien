@@ -1,0 +1,2 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html><html><head><title>Dat hang thanh cong</title><link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/app.css?v=20260602-2" /></head><body><%@ include file="/WEB-INF/views/fragments/header.jspf" %><main><h1>Dat hang thanh cong</h1><a href="${pageContext.request.contextPath}/orders">Xem don hang</a></main></body></html>

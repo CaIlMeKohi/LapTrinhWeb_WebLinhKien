@@ -1,0 +1,39 @@
+<header class="site-header">
+  <c:set var="isAuthenticated" value="${not empty sessionScope.currentUser}" />
+  <c:set var="currentUser" value="${sessionScope.currentUser}" />
+  <div class="header-inner">
+    <a class="brand" href="${pageContext.request.contextPath}/">
+      <span class="brand-mark" aria-hidden="true">&#9889;</span>
+      <span class="brand-copy">
+        <span class="brand-name">ElectroShop</span>
+        <span class="brand-tagline">Linh ki&#x1EC7;n &#x111;i&#x1EC7;n t&#x1EED;</span>
+      </span>
+    </a>
+    <nav class="main-nav">
+      <a class="nav-link" href="${pageContext.request.contextPath}/products">S&#x1EA3;n ph&#x1EA9;m</a>
+      <a class="nav-link" href="${pageContext.request.contextPath}/categories">Danh m&#x1EE5;c</a>
+      <a class="nav-link" href="${pageContext.request.contextPath}/blogs">Blog</a>
+      <a class="nav-link" href="${pageContext.request.contextPath}/promotions">Khuy&#x1EBF;n m&#xE3;i</a>
+      <a class="nav-link" href="${pageContext.request.contextPath}/contact">Li&#xEA;n h&#x1EC7;</a>
+    </nav>
+    <form class="search-form" action="${pageContext.request.contextPath}/search" method="get">
+      <input name="keyword" placeholder="T&#xEC;m s&#x1EA3;n ph&#x1EA9;m" />
+      <button type="submit">T&#xEC;m</button>
+    </form>
+    <div class="header-actions">
+      <a class="icon-button" href="${pageContext.request.contextPath}/cart" aria-label="Gi&#x1ECF; h&#xE0;ng"><span aria-hidden="true">&#128722;</span></a>
+      <c:choose>
+        <c:when test="${isAuthenticated}">
+          <a class="header-link" href="${pageContext.request.contextPath}/profile">H&#x1ED3; s&#x1A1;</a>
+          <a class="header-link" href="${pageContext.request.contextPath}/orders">&#x110;&#x1A1;n h&#xE0;ng</a>
+          <c:if test="${currentUser.role == 'ADMIN'}"><a class="header-link" href="${pageContext.request.contextPath}/admin/dashboard">Admin</a></c:if>
+          <a class="header-link" href="${pageContext.request.contextPath}/logout">&#x110;&#x103;ng xu&#x1EA5;t</a>
+        </c:when>
+        <c:otherwise>
+          <a class="header-link" href="${pageContext.request.contextPath}/login">&#x110;&#x103;ng nh&#x1EAD;p</a>
+          <a class="header-link" href="${pageContext.request.contextPath}/register">&#x110;&#x103;ng k&#xFD;</a>
+        </c:otherwise>
+      </c:choose>
+    </div>
+  </div>
+</header>

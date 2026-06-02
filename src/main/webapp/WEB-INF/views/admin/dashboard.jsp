@@ -1,0 +1,1 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %><!DOCTYPE html><html><head><title>Admin</title><link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/app.css?v=20260602-2" /></head><body><main><%@ include file="/WEB-INF/views/admin/sidebar.jspf" %><h1>Dashboard</h1><p>Total Products: ${productCount}</p></main></body></html>

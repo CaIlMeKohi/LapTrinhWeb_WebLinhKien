@@ -1,0 +1,3 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html><html><head><title>Tim kiem</title><link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/app.css?v=20260602-2" /></head><body class="bg-slate-950 text-slate-100"><%@ include file="/WEB-INF/views/fragments/header.jspf" %>
+<main class="mx-auto max-w-5xl px-4 py-10"><h1 class="text-3xl font-semibold"><c:out value="${heading}" /></h1><ul class="mt-6 grid gap-4"><c:forEach items="${products}" var="product"><li><a href="${pageContext.request.contextPath}/products/${product.id}"><c:out value="${product.name}" /> - ${product.price} d</a></li></c:forEach></ul></main></body></html>

@@ -1,0 +1,3 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html><html><head><title>Thanh toan</title><link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/app.css?v=20260602-2" /></head><body><%@ include file="/WEB-INF/views/fragments/header.jspf" %><main><h1>Thanh toan</h1><p>${checkoutError}</p>
+<form action="${pageContext.request.contextPath}/checkout" method="post"><label>Nguoi nhan<input name="recipientName" /></label><label>So dien thoai<input name="phone" /></label><label>Dia chi<input name="address" /></label><label>Ghi chu<input name="note" /></label><button>Dat hang</button></form></main></body></html>
